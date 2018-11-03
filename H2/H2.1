@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("start");
+    while(1)
+    {
+        char *command;
+        command=(char*)malloc(256*sizeof(char));
+        fgets(command,256,stdin);
+        printf(command);
+        //printf("length of command is %i",strlen(command));
+        if(strncmp(command,"exit",4)==0)
+        break;
+        system(command);
+        free(command);
+    }
+
+    return system("exit");
+}
